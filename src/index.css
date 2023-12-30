@@ -6,8 +6,51 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  margin-left: 7rem;
+  margin-right: 7rem;
+  text-align: center;
 }
+.divider {
+  width: 100%;
+  border: 1px solid;
+}
+h3 {
+  position: relative;
+}
+h3::before {
+  content: "";
+  border: 1px solid;
+  position: absolute;
+  width: 46%;
+  left: 0px;
+  top: 12px;
+}
+h3::after {
+  content: "";
+  border: 1px solid;
+  position: absolute;
+  width: 46%;
+  right: 0px;
+  top: 12px;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+}
+
+.data-table td {
+  font-size: 14px;
+}
+
+/* Add more styles as needed */

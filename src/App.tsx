@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Table from "./component/Table"
+import { calculateStatistics, getGamaDataSet } from "./helper/utils"
+import dataSet from "./data/Wine-Data.json"
 
 function App() {
+  const flavanoidsData = calculateStatistics(dataSet, "Flavanoids")
+  const gamaDataSet = getGamaDataSet(dataSet)
+  const gamadata = calculateStatistics(gamaDataSet, "Gamma")
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h2>Statistical masure of wine data</h2>
+  
+      <h3>Flavanoids</h3>
+      <Table data={flavanoidsData} property="Flavanoids"/>
+
+      <h3>Gamma</h3>
+      <Table data={gamadata} property="Gamma"/>
     </div>
   );
 }
